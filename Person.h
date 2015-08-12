@@ -15,11 +15,10 @@
 
 class Person {
 public:
-    Person(std::string name="", std::string email="", std::string uuid="");
-    //explicit Person(const std::string); // Not used when setDefaultPerson() is used.
+    Person(std::string name="", std::string email="");
     Person(const Person& orig);
     virtual ~Person();
-    static void setDefaultPerson(std::string name, std::string email, std::string uuid);
+    static void setDefaultPerson(std::string name, std::string email);
     
     // setters
     Person& setName(const std::string);

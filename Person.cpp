@@ -7,15 +7,10 @@
 
 #include "Person.h"
 
-Person::Person(std::string name, std::string email, std::string uuid) {
+Person::Person(std::string name, std::string email) {
     this->name = name.empty() ? defaultPerson.name : name;
     this->email = email.empty() ? defaultPerson.email : email;
-    this->uuid = uuid.empty() ? defaultPerson.uuid : uuid;
 }
-
-/*Person::Person(const std::string name) {
-    this->name = name;
-}*/
 
 Person::Person(const Person& orig) {
 }
@@ -40,4 +35,4 @@ const std::string Person::generateUUID() {
     return boost::uuids::to_string(u);
 }
 
-Person Person::defaultPerson {"Claus", "claus@gnome.no", ""};
+Person Person::defaultPerson {"Claus", "claus@gnome.no"};
