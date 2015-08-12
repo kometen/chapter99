@@ -1,0 +1,3 @@
+Uses boost to generate uuid's.
+
+http://stackoverflow.com/questions/3247861/example-of-uuid-generation-using-boost-in-c/3248017#3248017
