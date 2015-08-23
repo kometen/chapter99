@@ -7,9 +7,7 @@
 
 #include "Person.h"
 
-Person::Person(std::string name, std::string email) {
-    this->name = name.empty() ? defaultPerson.name : name;
-    this->email = email.empty() ? defaultPerson.email : email;
+Person::Person() {
 }
 
 Person::Person(const Person& orig) {
@@ -18,14 +16,16 @@ Person::Person(const Person& orig) {
 Person::~Person() {
 }
 
-Person& Person::setName(const std::string name) {
+void Person::setName(const std::string name) {
     this->name = name;
-    return *this;
 }
 
-Person& Person::setEmail(const std::string email) {
+void Person::setEmail(const std::string email) {
     this->email = email;
-    return *this;
+}
+
+void Person::setGender(const Gender gender) {
+    this->gender = gender;
 }
 
 const std::string Person::generateUUID() {
@@ -35,4 +35,14 @@ const std::string Person::generateUUID() {
     return boost::uuids::to_string(u);
 }
 
-Person Person::defaultPerson {"Claus", "claus@gnome.no"};
+void Person::print() const {
+    auto s = "";
+    if (gender == Gender::male) { s = "male"; }
+    if (gender == Gender::female) { s = "female"; }
+    if (gender == Gender::unspecified) { s = "unspecified"; }
+    std::cout << "name: " << name << std::endl;
+    std::cout << "uuid: " << uuid << std::endl;
+    std::cout << "email: " << email << std::endl;
+    std::cout << "gender: " << s << std::endl;
+    NO::print();
+}

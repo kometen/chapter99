@@ -18,13 +18,14 @@ using namespace std;
 int main(int argc, char** argv) {
     cout << "Blåbærsyltetøj!" << endl;
     Person me {};
-    cout << "name: " << me.getName() << endl;
-    cout << "uuid: " << me.getUUID() << endl;
-    cout << "email: " << me.getEmail() << endl;
-    me.setName("Claus Guttesen").setEmail("kometen@gmail.com");
-    cout << "name: " << me.getName() << endl;
-    cout << "uuid: " << me.getUUID() << endl;
-    cout << "email: " << me.getEmail() << endl;
+    me.print();
+    me.setName("Claus Guttesen");
+    me.setEmail("kometen@gmail.com");
+    me.setGender(Person::Gender::male);
+    me.NO::SetAddress1("Hovden B");
+    me.NO::SetPostalCode(6827);
+    me.NO::SetCity("Breim");
+    me.print();
     return 0;
 }
 

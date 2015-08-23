@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Person.o \
+	${OBJECTDIR}/countries/europe/DK.o \
+	${OBJECTDIR}/countries/europe/NO.o \
 	${OBJECTDIR}/main.o
 
 
@@ -67,6 +69,16 @@ ${OBJECTDIR}/Person.o: Person.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Person.o Person.cpp
+
+${OBJECTDIR}/countries/europe/DK.o: countries/europe/DK.cpp 
+	${MKDIR} -p ${OBJECTDIR}/countries/europe
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/countries/europe/DK.o countries/europe/DK.cpp
+
+${OBJECTDIR}/countries/europe/NO.o: countries/europe/NO.cpp 
+	${MKDIR} -p ${OBJECTDIR}/countries/europe
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/countries/europe/NO.o countries/europe/NO.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
