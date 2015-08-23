@@ -40,9 +40,31 @@ void Person::print() const {
     if (gender == Gender::male) { s = "male"; }
     if (gender == Gender::female) { s = "female"; }
     if (gender == Gender::unspecified) { s = "unspecified"; }
+    std::time_t ca = std::chrono::system_clock::to_time_t(createdAt);
     std::cout << "name: " << name << std::endl;
     std::cout << "uuid: " << uuid << std::endl;
     std::cout << "email: " << email << std::endl;
     std::cout << "gender: " << s << std::endl;
+    std::cout << "created at: " << std::ctime(&ca);
     NO::print();
+}
+
+std::string Person::getUUID() const {
+    return uuid;
+};
+
+std::string Person::getName() const {
+    return name;
+};
+
+std::string Person::getEmail() const {
+    return email;
+};
+
+Person::Gender Person::getGender() const {
+    return gender;
+};
+
+std::chrono::system_clock::time_point Person::getCreatedAt() const {
+    return createdAt;
 }

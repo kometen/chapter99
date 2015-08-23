@@ -16,7 +16,6 @@ using namespace std;
  *
  */
 int main(int argc, char** argv) {
-    cout << "Blåbærsyltetøj!" << endl;
     Person me {};
     me.print();
     me.setName("Claus Guttesen");
