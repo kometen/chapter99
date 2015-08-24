@@ -38,17 +38,23 @@ public:
     std::string getEmail() const;
     Gender getGender() const;
     std::chrono::system_clock::time_point getCreatedAt() const;
+    std::chrono::system_clock::time_point getUpdatedAt() const;
     
     // other functions
     virtual void print() const;
 
 private:
+    // data members.
     std::string name;
     std::string email;
     Gender gender { Gender::unspecified };
     std::string uuid { generateUUID() };
     std::chrono::system_clock::time_point createdAt { std::chrono::system_clock::now() };
+    std::chrono::system_clock::time_point updatedAt { std::chrono::system_clock::now() };
+
+    // functions.
     const std::string generateUUID();
+    void setUpdatedAt();
 
 protected:
 };
